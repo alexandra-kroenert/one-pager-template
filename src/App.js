@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Work from './pages/Work';
+import { createGlobalStyle } from 'styled-components';
 
-function App() {
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Navbar />
+      <main>
+        <HomePage />
+        <About />
+        <Work />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;
+
